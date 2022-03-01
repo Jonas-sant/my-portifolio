@@ -11,7 +11,7 @@ $rosa: #C100CC;
 /* BREAKPOINTS */
 $sm:600px;
 $md:900px;
-$lg:1200px;
+$lg:1024px;
 
 @mixin breackpoint($screen) {
     @media screen and ( max-width: $screen) {
@@ -21,6 +21,55 @@ $lg:1200px;
 
 
 @import 'reset';
+/* Menu Mobile */
+.menu-mobile{
+    z-index:999;
+
+    width: 60%;
+    background-color:$branco;
+    border-radius:8px;
+    position:fixed;
+    top:5px;
+    right: 5px;
+    box-shadow: 5px 6px 10px rgba(0,0,0,0.5);
+    transition:all 0.6s;
+
+    #fecha_menu{
+        display:none;  
+    }
+    
+
+    ion-icon{
+        font-size:45px;
+        position:absolute;
+        top:5px;
+        right: 5px;
+        color:$branco;
+        cursor:pointer;
+        
+    }
+
+    .nav-menu-mobile{
+        display:none;
+        width: 80%;
+        padding-top:40px;
+        padding-bottom:25px;
+        margin-top:30px;
+        margin:auto;
+        text-align:center;
+
+        li{
+            margin:0px 8px;
+            a{
+                color:$preto;
+            }
+            
+        }
+        
+    }
+    
+    
+}
 
 /* Section Presentation */
 .presentation{
@@ -71,7 +120,6 @@ $lg:1200px;
             a{
                 color:$branco;
                 transition: all 0.5s;
-                
                 &:hover{
                     color:$azul-claro;
                 }
@@ -94,21 +142,24 @@ $lg:1200px;
         padding-top:150px;
 
         @include breackpoint($sm){
-            width:100%;
+            width:95% !important;
             margin-top:0px;
             padding-top:60px;
             margin-left:40px;
             .name{
-                font-size:2.4em;
+                font-size:2em;
             }
             .subtitle{
-                font-size:1.8em;
+                font-size:1.4em;
             }
         }
 
         @include breackpoint($md) {
             width: 49%;
-            margin-left:30px;
+            margin-left:4%;
+        }
+        @include breackpoint($lg){
+            padding-top:15%;
         }
 
         .name{
@@ -137,9 +188,14 @@ $lg:1200px;
             color:$cinza-claro;
             font-size:1em;
             font-weight: bold;
-            margin-left:45px;
+            margin-left:10%;
+           
             @include breackpoint($sm){
-                margin-left:10px;
+                margin-left:3%;
+            }
+
+            @include breackpoint($lg){
+                margin-left:5%;
             }
            
         }
@@ -150,11 +206,19 @@ $lg:1200px;
             font-weight: bold;
             color:$preto;
             padding:6px 37px;
-            margin-left:60px;
+            margin-left:8%;
             transition:all 0.5s;
+            
             @include breackpoint($sm){
-                margin-left:20px;
+                margin-left:3%;
             }
+            @include breackpoint($md){
+                margin-left:4%;
+            }
+            @include breackpoint($lg){
+                margin-left:6%;
+            }
+
             &:hover{
                 box-shadow:0px 0px 15px $azul-claro;
             }
@@ -186,10 +250,13 @@ $lg:1200px;
     }
 }
 
+
+/* Section About */
 .about_me{
     width: 100%;
     height: 100%;
-    padding-bottom:30px;
+    padding-bottom:0px;
+    padding-top:30px;
 
     background: url("../img/about-me.png");
     background-color:$preto;
@@ -202,27 +269,27 @@ $lg:1200px;
         background-position-x:400px;
     }
 
+    .about-me_mobile{
+        display:none;
+        width: 100%;
+        height: 460px;
+        padding-top:30px;
+        background: url("../img/about-me_mobile.png");
+        background-color:$preto;
+        background-size:100%;
+        background-repeat: no-repeat;
+        
+            
+        @include breackpoint($sm) { 
+            display:block;
+        }
+    }
+
     .content_about{
         max-width: 95%;
         margin:auto;
         text-align:center;
-        padding-top:60px;
-
-
-        .about-me_mobile{
-            display:none;
-            width: 100%;
-            height: 450px;
-            background: url("../img/about-me_mobile.png");
-            background-color:$preto;
-            background-size:cover;
-            background-repeat: no-repeat;
-            
-                
-            @include breackpoint($sm) { 
-                display:block;
-            }
-        }
+        padding-top:25px;
 
         .title_about{
             font-size:1.4em;
@@ -255,7 +322,7 @@ $lg:1200px;
             border:none;
             background-image:linear-gradient(90deg, rgba(0,255,255,1) 0%, rgba(0,175,239,1) 26%, rgba(97,87,221,1) 62%, rgba(193,0,204,1) 100%) !important;
             @include breackpoint($sm){
-                width: 30%;
+                width: 20%;
             }
         }
 
@@ -285,7 +352,16 @@ $lg:1200px;
 
                 div{
                     margin:5px;
+                    @include breackpoint($sm){
+                        margin:auto;
+                        height: 60px;
+                        display:flex;
+                        align-items:center;
+                        justify-content:space-between;
+                        
+                    }
                 }
+                
             }
         }
         .cards{
@@ -304,7 +380,7 @@ $lg:1200px;
                 background:url("../img/skills-mobile.png");
                 background-repeat:no-repeat;
                 background-size:20%;
-                background-position-x:280px;
+                background-position-x:280px !important;
                 padding-bottom:25px
                 
             }
@@ -346,7 +422,7 @@ $lg:1200px;
 
     }
 }
-
+/* Section Projects */
 .projects{
     width: 100%;
     padding-bottom:5%;
@@ -412,7 +488,7 @@ $lg:1200px;
             transition:all 0.5s;
 
             @include breackpoint($sm){
-                width:80%;
+                width:80% !important;
                 margin:auto;
                 margin-bottom:30px;
             }
@@ -472,6 +548,8 @@ $lg:1200px;
 .divide_project{
     height: 5px;
 }
+
+/* Section Contact */
 .contact{
     color:$branco;
     background:#1B1A1A url("../img/background-contact.png");
@@ -499,6 +577,7 @@ $lg:1200px;
         @include breackpoint($sm){
             width: 100%;
             padding:0;
+            margin:0;
             flex-direction:column;
         }
         @include breackpoint($md) {
@@ -521,7 +600,7 @@ $lg:1200px;
             @include breackpoint($sm){
                 background-color:transparent;
                 height: 380px;
-                width: 98%;
+                width: 98% !important;
                 margin:0;
                 padding:0;
             }
