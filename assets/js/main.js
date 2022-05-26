@@ -18,7 +18,7 @@ $(document).ready(function(){
                     <p>${description}</p>
                 </div>
             </div>
-            <a class="btn-project-card" id="btn-project-card" href="#">Ver Projeto<ion-icon name="search"></ion-icon></a>    
+                
         </div>
         `)
     })
