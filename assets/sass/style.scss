@@ -543,6 +543,15 @@ $lg:1024px;
             }
         }
     }
+    .modal-project{
+        margin:auto;
+        width:80%;
+        height:80%;
+        background-color: #202020;
+        box-shadow: 3px 2px 5px rgba(255, 254, 254, 0.3);
+        position:absolute;
+    
+    }
 
 }
 .divide_project{
@@ -652,9 +661,10 @@ $lg:1024px;
             form{
                 width: 80%;
                 height: 80%;
-
+                
                 margin:auto;
                 margin-top:10%;
+                
 
                 display:flex;
                 flex-direction:column;
@@ -677,6 +687,7 @@ $lg:1024px;
                  .row{
                     width:100%;              
                     display:flex;
+                    
                     justify-content:space-between;
                     align-items:flex-start;
                 }

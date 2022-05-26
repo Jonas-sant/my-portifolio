@@ -1,3 +1,32 @@
+//Jquery
+$(document).ready(function(){
+
+    trabalhosJson.forEach(trabalho=>{
+        let description = trabalho.description;
+
+        $("#projects").append(`
+        <div class="card-project">
+            <div class="img-project-card" id="img-project">
+                <img src="${trabalho.img}" alt="modelo-project">
+            </div>
+            <div class="content-project-card">
+                <div>
+                    <h3>${trabalho.name}</h3>
+                    <ion-icon name="desktop"></ion-icon>
+                </div>
+                <div>
+                    <p>${description}</p>
+                </div>
+            </div>
+            <a class="btn-project-card" id="btn-project-card" href="#">Ver Projeto<ion-icon name="search"></ion-icon></a>    
+        </div>
+        `)
+    })
+    
+});
+
+//Menu Mobile
+
 let abreMenu = document.querySelector('#abre_menu');
 let fechaMenu  = document.querySelector('#fecha_menu');
 let showMenu = document.querySelector('.nav-menu-mobile');
@@ -35,3 +64,4 @@ abreMenu.addEventListener('click',function(){
 fechaMenu.addEventListener('click',()=>{
     fecha_menu();
 });
+
